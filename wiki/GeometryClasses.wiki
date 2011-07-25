@@ -1,5 +1,4 @@
 #summary Introduction to geometry classes
-#labels Featured
 
 = 幾何オブジェクト = 
 
