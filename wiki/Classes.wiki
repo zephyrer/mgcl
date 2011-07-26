@@ -4,35 +4,49 @@
 = MGCL のクラス =
 MGCL は完全なオブジェクト指向をサポートしています。すべての機能はクラスとして提供されます。
 
- *  MGGeometry - 幾何オブジェクトのための抽象クラス。
- *  MGTopology - 位相構造を表現するための抽象クラス。
- *  MGGel - MGCL オブジェクトをグループのメンバーにするための抽象クラス (幾何オブジェクト、位相オブジェクト、グループオブジェクト、アトリビュートの 4 クラスを総称するクラス)。
- *  MGGroup - グループエレメントをグルーピングするクラス。デザインパターンの Composite パターン。
- *  MGObject - 幾何オブジェクトおよび位相オブジェクトを総称するクラス。
- *  基本要素クラス - 幾何オブジェクトの基本要素となるクラス。拡張実数 (MGEReal) やノット (MGKnot) など。
- *  座標変換クラス - 座標変換をあらわすオブジェクト、MGVector, MGMatrix, MGTransform など。
- *  B表現の構成要素となるクラス - MGKnotVector (ノット列), MGBPointSeq (線 B 表現の B 係数) など。
+ *  [GeometryClasses MGGeometry] - 幾何オブジェクトのための抽象クラス。
+ *  [TopologyClasses MGTopology] - 位相構造を表現するための抽象クラス。
+ *  [Classes#MGGel] - MGCL オブジェクトをグループのメンバーにするための抽象クラス (幾何オブジェクト、位相オブジェクト、グループオブジェクト、アトリビュートの 4 クラスを総称するクラス)。
+ *  `MGGroup` - グループエレメントをグルーピングするクラス。デザインパターンの Composite パターン。
+ *  [Classes#MGObject] - 幾何オブジェクトおよび位相オブジェクトを総称するクラス。
+ *  基本要素クラス - 幾何オブジェクトの基本要素となるクラス。拡張実数 (`MGEReal`) やノット (`MGKnot`) など。
+ *  座標変換クラス - 座標変換をあらわすオブジェクト、`MGVector`, `MGMatrix`, `MGTransform` など。
+ *  B 表現の構成要素となるクラス - `MGKnotVector` (ノット列), `MGBPointSeq` (線 B 表現の B 係数) など。
  *  シリアライズ関連クラス - MGCL オブジェクトの永続化を行うためのクラス。
 
 = オブジェクト一覧 =
-TODO: 図を貼り付ける。
 
-= グループエレメント MGGel =
+http://mgcl.googlecode.com/svn/wiki/image/object-list.png
+
+== MGGel ==
 
 MGCL のオブジェクトをグループのメンバーにするための抽象クラス。
 派生クラスは以下の 4 種。
 
- * MGGroup - グループオブジェクト。
- * MGObject - MGCL 図形オブジェクト(幾何オブジェクトおよび位相オブジェクト) 。
- * MGAttrib - アトリビュート(属性)クラス。
- * MGUAttrib - ユーザー定義のアトリビュートクラス。 
+ * `MGGroup` - グループオブジェクト。
+ * `MGObject` - MGCL 図形オブジェクト (幾何オブジェクトおよび位相オブジェクト)。
+ * `MGAttrib` - アトリビュート (属性) クラス。
+ * `MGUAttrib` - ユーザー定義のアトリビュートクラス。 
+
+== MGGroup ==
+`MGGel` のリストを格納するクラス。
+
+http://mgcl.googlecode.com/svn/wiki/image/mg-group.png
+
+`MGGroup` も `MGGel` のサブクラスなので、
+再帰的な構造 (GoF Design Pattern で言う Composite パターン) になっている。
+`MGGroup` のリストはポインタの所有権付きリスト (`MGPList`) となっている。
+
+このクラスで定義されている主な関数は以下の通り。
+
+ * リスト操作関数 (`pop`, `push`, `begin`, `end`, `front`, `back`)
 
 == MGObject ==
 
 幾何クラスおよび位相オブジェクトを総称するクラス。
 定義されている主な関数：
 
- * MGOfstream, MGIfstream を介したオブジェクトのシリアライズ。
+ * `MGOfstream`, `MGIfstream` を介したオブジェクトのシリアライズ。
  * オブジェクトのダンプ文字列の出力。
  * クローンオブジェクト (オブジェクトの deep copy) の作成。
  * 各種座標変換。
@@ -42,44 +56,49 @@ MGCL のオブジェクトをグループのメンバーにするための抽象
 MGCL オブジェクトの基本要素となるクラス。
 以下のオブジェクトがあります。
 
- * MGEReal - 拡張実数、 C 言語の double に正負の無限大を追加したもの。
- * MGInterval, MGBox - 範囲を表現するクラス。
-  * MGInterval ･･･ 1 次元の範囲 (上限、下限は MGEReal で表現される)。
-  * MGBox ･･･ N 次元の範囲 (N は 2 以上の整数) 。
- * MGNDDArray - 非減少数列。単調増加する数列を表現、数列データは double 。
- * MGPosition - n 次元の位置を表現する。
- * MGKnot - ノットをあらわすクラス。ノットの値および多重度を表現する。
- * MGKnotArray - ノット列を表すクラス。ノットベクトルとは異なるので注意。
- * MGVector - ベクタを表すクラス。座標変換クラスでもある。
+ * `MGEReal` - 拡張実数、 C 言語の double に正負の無限大を追加したもの。
+ * `MGInterval`, `MGBox` - 範囲を表現するクラス。
+  * `MGInterval` ･･･ 1 次元の範囲 (上限、下限は `MGEReal` で表現される)。
+  * `MGBox` ･･･ N 次元の範囲 (N は 2 以上の整数) 。
+ * `MGNDDArray` - 非減少数列。単調増加する数列を表現、数列データは double 。
+ * `MGPosition` - n 次元の位置を表現する。
+ * `MGKnot` - ノットをあらわすクラス。ノットの値および多重度を表現する。
+ * `MGKnotArray` - ノット列を表すクラス。ノットベクトルとは異なるので注意。
+ * `MGVector` - ベクタを表すクラス。座標変換クラスでもある。
 
 == 座標変換クラス ==
 
 座標変換オブジェクトには スケーリング (通常の実数 double を使用)、
-平行移動 (MGVector 、ベクター)、原点を変更しない変換 (MGMatrix 、マトリクス)、
-一般変換 (MGTransf 、トランスフォーム) があります。
+平行移動 (`MGVector`: ベクトル)、原点を変更しない変換 (`MGMatrix`: マトリクス)、
+一般変換 (`MGTransf`: トランスフォーム) があります。
 
-MGPPRep (曲線の Piecewise Polynomial 表現) を除くすべての幾何オブジェクトには
+`MGPPRep` (曲線の Piecewise Polynomial 表現) を除くすべての幾何オブジェクトには
 この 4 種類の座標変換演算子が用意されています。 
 
-`+`, `-`, `+=`, `-=`, `*`, `/`, `*=`, `/=` などの
-演算子のオペレータオーバーロードによります。 
+`operator+`, `operator-`, `operator+=`, `operator-=`,
+`operator*`, `operator/`, `operator*=`, `operator/=` などの
+オペレータオーバーロードによります。 
 
 MGCL の幾何オブジェクトはすべて、座標変換によりオブジェクトを変換してもパラメータ値は変わりません。
-幾何オブジェクト g と座標変換 T に関して次の式が成立します： 
+幾何オブジェクト `g` と座標変換 `T` に関して次の式が成立します： 
 
-(`eval()` は位置座標の評価であり、幾何オブジェクト g のあるパラメータ値 ｔ の座標値を求めてから
-変換 T を加えた点と、g に座標変換 T を加えた後の幾何オブジェクトのパラメータ値 t の座標値は同じ点です。)
+http://mgcl.googlecode.com/svn/wiki/image/expr1.png
+
+`eval()` は位置座標の評価であり、幾何オブジェクト `g` のあるパラメータ値 `t` の座標値を求めてから
+変換 `T` を加えた点と、 `g` に座標変換 `T` を加えた後の幾何オブジェクトのパラメータ値 `t` の座標値は同じ点です。
 
 == MGVector ==
 
-クラス MGVector はクラス MGUnit_vector のスーパークラスです。空間次元 n は 0, 1, 2, 3, ...... と、いくつでもかまいません。
+クラス `MGVector` はクラス `MGUnit_vector` のスーパークラスです。空間次元 n は 0, 1, 2, 3, ...... と、いくつでもかまいません。
 
-MGVectorの機能：
+http://mgcl.googlecode.com/svn/wiki/image/mg-vector.png
+
+MGVector の機能：
 
  * 各種コンストラクタ。
  * ベクトルの長さを求める。
- * 内積計算 (演算子 `%` )、スカラー積である。
- * 外積計算 (演算子 `*` )  ベクトル積は一般には 3 次元空間のみに定義されるが、一般の n 次元空間に拡張。
+ * 内積計算 (`operator%`) スカラー積である。
+ * 外積計算 (`operator*`) ベクトル積は一般には 3 次元空間のみに定義されるが、一般の n 次元空間に拡張。
  * 直交または平行かどうかの判定。
  * 二つのベクトルの角度を求める (角度、正弦値、余弦値)。
  * 二つのベクトルの補間 (回転、または直線補間)。
@@ -89,10 +108,14 @@ MGVectorの機能：
 
 == MGMatrix, MGTransform ==
 
-MGMatrix は原点を中心とする変換ですが、MGTransf は任意の点を中心として変換する座標変換です。 
-MGMatrix に用意されるメンバー関数を任意の点を中心に実行できるよう、変換したメンバー関数が用意されています。
+`MGMatrix` は原点を中心とする変換ですが、`MGTransf` は任意の点を中心として変換する座標変換です。 
+`MGMatrix` に用意されるメンバー関数を任意の点を中心に実行できるよう、変換したメンバー関数があります。
 
-MGMatrix, MGTransform の機能：
+http://mgcl.googlecode.com/svn/wiki/image/mg-matrix.png
+
+http://mgcl.googlecode.com/svn/wiki/image/mg-transf.png
+
+`MGMatrix`, `MGTransform` の機能：
 
  * 各種コンストラクタ。
  * 転置行列を求める。
@@ -107,17 +130,25 @@ MGMatrix, MGTransform の機能：
 
 = B 表現 (曲線/曲面) の構成要素 =
 
- * MGKnotVector - ノットベクトル。オーダｋ(次数 k-1 ) B 表現次元 n 。
- * MGBPointSeq - 点列 線 B 表現の B 係数(制御点列)などに使用される。
- * MGSPointSeq - 点の 2 次元列表現 面 B 表現の B 係数などに使用される。
+ * `MGKnotVector` - ノットベクトル。オーダ k (次数 k-1) B 表現次元 n。
+
+   http://mgcl.googlecode.com/svn/wiki/image/mg-knot-vector.png
+
+ * `MGBPointSeq` - 点列 線 B 表現の B 係数 (制御点列) などに使用される。
+ 
+   http://mgcl.googlecode.com/svn/wiki/image/mg-b-point-seq.png
+ 
+ * `MGSPointSeq` - 点の 2 次元列表現 面 B 表現の B 係数などに使用される。
+
+   http://mgcl.googlecode.com/svn/wiki/image/mg-s-point-seq.png
 
 = シリアライズ関連クラス =
 
 シリアライズ (永続化) のための補助クラス。
 以下の 2 つのクラスが定義されている：
 
- * MGIfstream - 入力ファイルストリームクラス。
- * MGOfstream - 出力ファイルストリームクラス。
+ * `MGIfstream` - 入力ファイルストリームクラス。
+ * `MGOfstream` - 出力ファイルストリームクラス。
 
 以下の機能が実装されている。
 

@@ -1,3 +1,19 @@
 #summary Contact
 #labels Featured
-準備中。
+
+= Contact =
+
+<wiki:toc max_depth="3" />
+
+== ご意見、ご感想 ==
+
+各 Wiki ページのコメント欄までお願いいたします。
+
+== バグ報告 ==
+
+バグ報告は Issue Tracker で受け付けております。
+
+== プロジェクト参加希望 ==
+
+MGCL 開発に参加したいという方は、現在受け入れ態勢を調整中ですので、
+もうしばらくお待ち下さい。

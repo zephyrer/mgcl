@@ -6,7 +6,9 @@
 
 == 概要 ==
 
-`MGGeometry` は `MGPoint, MGCurve, MGSurface` のスーパークラスで抽象クラスです。
+`MGGeometry` は `MGPoint`, `MGCurve`, `MGSurface` のスーパークラスで抽象クラスです。
+
+http://mgcl.googlecode.com/svn/wiki/image/mg-geometry.png
 
 異なる多様体次元に対応できる共通関数が用意されています。
 
@@ -21,29 +23,58 @@
 
 === 点と曲線／曲面の関係 ===
 
- * on, param メンバー関数 on, param は点 (MGPosition) と 線 (MGCurve) または, 面 (MGSurface) との関係で、曲線、曲面が与えられた点のデータとなるパラメータ値を求める。
- * closest メンバー関数 closest は点から曲線／曲面へ最も近い点を曲線／曲面のパラメータ値として求める。
- * perps メンバー関数 perps は点から曲線／曲面に下ろした垂線の足のパラメータ値を(複数あればすべて)求める。
+`on`, `param` メンバー関数:
+
+  `on`, `param` は点 (`MGPosition`) と 線 (`MGCurve`) または, 面 (`MGSurface`) との関係で、
+  曲線、曲面が与えられた点のデータとなるパラメータ値を求める。
+
+`closest` メンバー関数;
+
+  `closest` は点から曲線／曲面へ最も近い点を曲線／曲面のパラメータ値として求める。
+
+`perps` メンバー関数:
+
+  `perps` は点から曲線／曲面に下ろした垂線の足のパラメータ値を (複数あればすべて) 求める。
 
 === 曲線と曲線の関係 ===
 
- * closest メンバー関数 closest はふたつの曲線の最近傍点となるパラメータ値を求める。
- * perps メンバー関数 perps は曲線から曲線に下ろした垂線の足の曲線のパラメータ値の対を(複数あればすべて)求める。
- * isect メンバー関数 isect は曲線と曲線の交点を(複数あればすべて)求める。
+`closest` メンバー関数:
+
+  `closest` はふたつの曲線の最近傍点となるパラメータ値を求める。
+
+`perps` メンバー関数:
+
+   `perps` は曲線から曲線に下ろした垂線の足の曲線のパラメータ値の対を (複数あればすべて) 求める。
+
+`isect` メンバー関数:
+
+  `isect` は曲線と曲線の交点を (複数あればすべて) 求める。
 
 === 曲線と曲面の関係 ===
 
- * isect メンバー関数 isect は曲線と曲面の交点を（複数あればすべて）求める。
- * project 指定方向ベクトルに沿って、または面の normal となるよう、曲線を曲面上に投影した、面上の曲線を求める。
+`isect` メンバー関数:
+
+  `isect` は曲線と曲面の交点を（複数あればすべて）求める。
+
+`project` メンバー関数:
+
+   指定方向ベクトルに沿って、または面の normal となるよう、曲線を曲面上に投影した、面上の曲線を求める。
 
 === 曲面と曲面の関係 ===
 
- * isect メンバー関数 isect は曲面と曲面の交線を(複数あればすべて)求める。
+`isect` メンバー関数:
 
-== 曲線クラス - MGCurve ==
+  `isect` は曲面と曲面の交線を (複数あればすべて) 求める。
+  
+  http://mgcl.googlecode.com/svn/wiki/image/mg-surface.png
+
+== MGCurve ==
 
 曲線全般を表現する抽象クラス。
-サブクラスに `MGStraight, MGEllipse, MGLBRep, MGRLBRep, MGTrimmedCurve, MGCompositeCurve` がある。
+サブクラスに `MGStraight`, `MGEllipse`, `MGLBRep`, `MGRLBRep`, 
+`MGTrimmedCurve`, `MGCompositeCurve` がある。
+
+http://mgcl.googlecode.com/svn/wiki/image/mg-curve.png
 
 以下の関数が定義されている。
 
@@ -65,29 +96,43 @@
  * 曲線のスウィープ面を求める。
  * 曲線をある面に投影した曲線を求める。
 
+   http://mgcl.googlecode.com/svn/wiki/image/three-dimensional-curve.png
+
 === スプライン曲線クラス ===
 
-スプライン曲線はオーダー k (次数 k-1), B 表現次元 n, ノットベクトル t, B 係数 P,
-`MGRLBRep` の場合はさらに P の各点に対応した重み係数を加えて表現されます。
+スプライン曲線を
+
+ * オーダー k (次数 k-1), 
+ * B 表現次元 n, 
+ * ノットベクトル t, 
+ * B 係数 P
+
+で、`MGRLBRep` の場合はさらに
+
+ * P の各点に対応した重み係数
+
+を加えて表現します。
 
 `MGLBRep` (非 Rational な線 B 表現):
 
-  MGLBRep で k=2 のときスプライン曲線は折れ線 (polyline) であり、
+  http://mgcl.googlecode.com/svn/wiki/image/mg-lbrep.png
+
+  k=2 のときスプライン曲線は折れ線 (polyline) であり、
   最初の点のパラメータ値を 0.0 として点 id をその点のパラメータ値とする折れ線スプラインが利用可能です。
 
 `MGRLBRep` (Rational な線 B 表現):
 
-  TBW
+  http://mgcl.googlecode.com/svn/wiki/image/mg-rlbrep.png
 
 `MGPPRep` (多項式表現):
 
-  MGPPRep は MGGeometry/MGCurve のサブクラスではありません
+  `MGPPRep` は `MGCurve` の、と言うよりは `MGGeometry` のサブクラスではありません。
 
 主な機能
 
  * 位置データのみから曲線を求める。(補間によるスプライン曲線の計算)
  * データポイント、ノットベクトル、位置データから曲線を求める。
- * データポイントと接続条件( 1 次または 2 次微分値)を与えて曲線を求める。
+ * データポイントと接続条件 (1 次または 2 次微分値) を与えて曲線を求める。
  * 折れ線と折れ線に内接する円弧データを含む自由曲線を求める。
  * 楕円を曲線で近似する。
  * 二つの 2 次元の曲線を混合して 3 次元曲線を求める。
@@ -111,7 +156,7 @@
 
 `MGTrimmedCurve` (部分曲線):
 
-  他の MGCurve のサブクラスの曲線の 1 部分(元のパラメータ範囲の 1 部分)を表現する。
+  他の `MGCurve` のサブクラスの曲線の 1 部分 (元のパラメータ範囲の 1 部分) を表現する。
 
 `MGSurfCurve` (面上線):
 
@@ -119,24 +164,25 @@
 
 `MGCompositeCurve` (複合曲線):
 
-  複数の異なる種類の曲線 (MGCurve) を結合してひとつの曲線を表現する。
+  複数の異なる種類の曲線 (`MGCurve`) を結合してひとつの曲線を表現する。
 
-== 曲面クラス - MGSurface ==
+== MGSurface ==
 
-曲面全般を表現する抽象クラス。
-
-以下のサブクラスがあります。
+曲面全般を表現する抽象クラス。以下のサブクラスがあります。
 
  * `MGPlane` (無限平面)
+
+   http://mgcl.googlecode.com/svn/wiki/image/mg-plane.png
+
  * `MGCylinder` (円筒面)
  * `MGSphere` (球面)
  * `MGSBRep` (非 Rational な面 B 表現)
- * `MGRSBRep` ( Rational な面 B 表現)
+ * `MGRSBRep` (Rational な面 B 表現)
 
 以下の共通の関数を提供します
 
  * あるパラメータ値 (u, v) における偏微分値を求める (評価)。
- * 曲面の曲率(平均、ガウス、最小、最大)、曲面の第 1 、第 2 基本量の計算。
+ * 曲面の曲率(平均、ガウス、最小、最大)、曲面の第 1、第 2 基本量の計算。
  * ボックス枠の計算。
  * ある点からの最近傍点を求める。
  * 点が面内に乗っているかを判定し、乗っていればそのパラメータ値を求める。
@@ -150,16 +196,16 @@
 
 === 面 B 表現クラス ===
 
-`MGSBRep` はテンソル積の考えにより `MGLBRep` (線 B 表現) を曲面に拡張したものであり、 
+`MGSBRep` はテンソル積の考えにより `MGLBRep` (線 B 表現) を曲面に拡張したものであり、
 `MGRSBRep` は `MGRLBRep` を曲面に拡張したものです。
 
 `MGSBRep` (面 B 表現):
 
-  TODO: 図を貼り付ける。
+  http://mgcl.googlecode.com/svn/wiki/image/mg-sbrep.png
 
 `MGRSBRep` (Rational な面 B 表現):
 
-  TODO: 図を貼り付ける。
+  http://mgcl.googlecode.com/svn/wiki/image/mg-rsbrep.png
 
 `MGSBRep`, `MGRSBRep` の機能：
 
