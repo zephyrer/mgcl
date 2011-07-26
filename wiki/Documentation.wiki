@@ -16,7 +16,7 @@
 MGCL の数学的背景を解説する文書です。
 
  * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-by-mgcl.pdf MGCL による CAGD]
-  * 1 章 次元（準備中）
+  * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch01-dimension.pdf 1 章 次元]
   * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch02-divided-difference.pdf 2 章 差分商]
   * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch03-straight-plane.pdf 3 章 直線と平面]
   * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch04-curve.pdf 4 章 曲線]
