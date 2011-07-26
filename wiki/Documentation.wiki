@@ -1,4 +1,5 @@
 #summary List of documentation
+#labels Featured
 
 = Documentation =
 
