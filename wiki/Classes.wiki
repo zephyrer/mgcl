@@ -7,10 +7,10 @@ MGCL は完全なオブジェクト指向をサポートしています。すべ
  *  [GeometryClasses MGGeometry] - 幾何オブジェクトのための抽象クラス。
  *  [TopologyClasses MGTopology] - 位相構造を表現するための抽象クラス。
  *  [Classes#MGGel MGGel] - MGCL オブジェクトをグループのメンバーにするための抽象クラス (幾何オブジェクト、位相オブジェクト、グループオブジェクト、アトリビュートの 4 クラスを総称するクラス)。
- *  `MGGroup` - グループエレメントをグルーピングするクラス。デザインパターンの Composite パターン。
+ *  [Classes#MGGroup MGGroup] - グループエレメントをグルーピングするクラス。デザインパターンの Composite パターン。
  *  [Classes#MGObject MGObject] - 幾何オブジェクトおよび位相オブジェクトを総称するクラス。
  *  基本要素クラス - 幾何オブジェクトの基本要素となるクラス。拡張実数 (`MGEReal`) やノット (`MGKnot`) など。
- *  座標変換クラス - 座標変換をあらわすオブジェクト、`MGVector`, `MGMatrix`, `MGTransform` など。
+ *  座標変換クラス - 座標変換をあらわすオブジェクト。 `MGVector`, `MGMatrix`, `MGTransform` など。
  *  B 表現の構成要素となるクラス - `MGKnotVector` (ノット列), `MGBPointSeq` (線 B 表現の B 係数) など。
  *  シリアライズ関連クラス - MGCL オブジェクトの永続化を行うためのクラス。
 
