@@ -1,0 +1,136 @@
+#summary summary for topology classes
+
+= 位相オブジェクト =
+
+<wiki:toc max_depth="3" />
+
+== 概要 ==
+`MGTopology` は `MGCellBase`, `MGComplex` のスーパークラスで抽象クラスです。
+
+http://mgcl.googlecode.com/svn/wiki/image/mg-topology.png
+
+`MGTopology`:
+
+  すべての位相構造を表現するための抽象クラス。
+
+`MGCellBase`:
+
+  セル情報のうち、binder cell データを保持する。
+  `MGPVertex`, `MGCellNB` の親クラス。
+
+`MGPVertex`:
+
+  エッジの境界。端点のパラメータ値を表現する。
+
+`MGCellNB`:
+
+  境界なしのセル (Cell of No Boundaries)。
+  `MGBVertex` が境界を持たない。
+  また、エッジ は PVertex という特殊なセルを境界にもつ。
+  これらの親クラスとなるのが `MGCellNB` である。 
+
+  [GeometryClasses Geometry] を構成要素として持ち、均一の多様体次元の Geometry を表現する。
+
+`MGBVertex`:
+
+  Binder vertex を表現する。
+  PVertex または BVertex の binder cell となる。
+
+`MGEdge`:
+
+  `MGLoop` を構成する 1 次元多様体セル。
+  `MGCellNB` に境界として PVertex を付加したもの。
+
+`MGCell`:
+
+  一般的な位相要素。
+  `MGCellNB` に一般的な境界 (`MGBoundary`) を付加したもの。
+  現在、2 次元多様体の `MGFace` (trimmed surface) がサポートされる
+  (`MGSolid` は未サポート)。
+
+`MGFace`:
+
+  Surface をトリムしたいわゆる trimmed surface を表現する。
+  
+  http://mgcl.googlecode.com/svn/wiki/image/trimmed-surface.png
+
+`MGComplex`:
+
+  セルの有機的な結合。
+  `MGBoundary` の親クラスとなる。
+
+`MGBoundarynD`:
+
+  2 次元多様体以上のセルのひとつの境界を表現する。
+  現在 `MGLoop` (面の境界)、
+  および `MGShell` (ソリッドの境界、face の接合関係を表現したもの) がサポートされる。
+  1 次元多様体である `MGEdge` の境界は `MGPVertex` により表現される。
+
+`MGLoop`:
+
+  `MGFace` のひとつの境界を表現する。
+  一般的には複数のループにより面の境界を構成する。
+  `MGLoop` は、複数の (連続した) `MGEdge` より構成される。
+
+`MGShell`:
+
+  `MGFace` を境界で接合したもの。ソリッドの境界となる。
+
+== 位相要素の基本関係 ==
+いくつかの用語の説明をする。
+
+http://mgcl.googlecode.com/svn/wiki/image/topoelm-relation.png
+
+`Star`:
+
+  自身が境界 (の一部) となっている 1 (以上) 高い多様体次元のセル。
+
+`Boundary`:
+
+  あるセルの境界を構成するセル群 (Complex)。
+
+  通常のモデルでは star/boudary は 1 だけ高い、または低い多様体次元のセルを求める。
+  Boundary はあるセルの境界を構成するセル群 (Complex) である。
+
+  図では C11 の star Cell は face1 であり、
+  face1 の boundary は C10, C11, C12, C13 である。
+
+`Neighbour`:
+
+  隣接セル、すなわち同一セルの境界となっている隣の境界である。
+
+  隣接 (neighbour) とは、同じセル (一つ多様体次元が高い) の境界を構成するセルで、
+  自身のセルに隣接するものである。
+  
+  図では C11 の neighbour は C10, C12 である。
+
+`Partner`:
+
+  パートナー (partner) とは自身のセルのとは異なるセルの境界を表現していて、
+  自身のセルと binder を通して接続されている。
+
+  図では C11 の partner は C2 である。
+  binder B1 を通して接続されている。
+
+== MGCell ==
+最小位相要素 `MGGeometry` を構成要素に持ち、均一の多様体次元の Geometry を表現する。
+
+ * `MGFace` - 2 次元多様体 (trimmed surface)。
+ * `MGEdge` - 1 次元多様体。
+
+http://mgcl.googlecode.com/svn/wiki/image/mg-cell-fig.png
+
+== MGComplex ==
+セルの有機的な結合。
+`MGBoundary` の構成要素となる。
+
+== MGBoundary ==
+セルの境界を表現するクラス。
+
+ * n 次元の境界をあらわす `MGBoundarynD` 。
+ * 現在サポートされているのは以下の通り
+   * `MGPVertex`: 1 次元境界
+   * `MGLoop`: 2 次元境界
+   * `MGShell`: 3 次元境界
+
+http://mgcl.googlecode.com/svn/wiki/image/mg-boundary-fig.png
