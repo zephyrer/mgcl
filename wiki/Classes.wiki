@@ -1,83 +1,78 @@
 #summary Summary of classes in MGCL
 #labels Featured
 
-= MGCL のクラス =
-MGCL は完全なオブジェクト指向をサポートしています。すべての機能はクラスとして提供されます。
+= Classes =
+MGCL supports object-oriented programming.
 
- *  [GeometryClasses MGGeometry] - 幾何オブジェクトのための抽象クラス。
- *  [TopologyClasses MGTopology] - 位相構造を表現するための抽象クラス。
- *  [Classes#MGGel MGGel] - MGCL オブジェクトをグループのメンバーにするための抽象クラス (幾何オブジェクト、位相オブジェクト、グループオブジェクト、アトリビュートの 4 クラスを総称するクラス)。
- *  [Classes#MGGroup MGGroup] - グループエレメントをグルーピングするクラス。デザインパターンの Composite パターン。
- *  [Classes#MGObject MGObject] - 幾何オブジェクトおよび位相オブジェクトを総称するクラス。
- *  基本要素クラス - 幾何オブジェクトの基本要素となるクラス。拡張実数 (`MGEReal`) やノット (`MGKnot`) など。
- *  座標変換クラス - 座標変換をあらわすオブジェクト。 `MGVector`, `MGMatrix`, `MGTransform` など。
- *  B 表現の構成要素となるクラス - `MGKnotVector` (ノット列), `MGBPointSeq` (線 B 表現の B 係数) など。
- *  シリアライズ関連クラス - MGCL オブジェクトの永続化を行うためのクラス。
+ *  [GeometryClasses MGGeometry] - An abstract class for geometry classes.
+ *  [TopologyClasses MGTopology] - An abstract class for topology classes.
+ *  [Classes#MGGel MGGel] - An abstract class for class geometry, topology, attribute, and group.
+ *  [Classes#MGGroup MGGroup] - Groups group elements (GoF's Composite design pattern)
+ *  [Classes#MGObject MGObject] - An abstract class for `MGGeometry` and `MGTopology`.
+ *  Base Classes - Form geometry classes. `MGEReal` (extended real number), `MGKnot` (knot), etc.
+ *  Transformation Classes - Represents transformations. `MGVector`, `MGMatrix`, `MGTransform`, etc.
+ *  B-Representation Classes - `MGKnotVector` (knot vector), `MGBPointSeq` (coefficient of a B-Rep curve), etc.
+ *  Serialization Classes - Classes to serialize MGCL objects.
 
-= オブジェクト一覧 =
+= Class Hierarchy Diagram =
 
 http://mgcl.googlecode.com/svn/wiki/image/object-list.png
 
 == MGGel ==
+An abstract class `MGGel` represents a group element.
+Gel is the abbreviation of Group ELement.
 
-MGCL のオブジェクトをグループのメンバーにするための抽象クラス。
-派生クラスは以下の 4 種。
+`MGGel` is designed to be stored in `MGGroup` as an element.
+The subclasses of `MGGel` are as follows:
 
- * `MGGroup` - グループオブジェクト。
- * `MGObject` - MGCL 図形オブジェクト (幾何オブジェクトおよび位相オブジェクト)。
- * `MGAttrib` - アトリビュート (属性) クラス。
- * `MGUAttrib` - ユーザー定義のアトリビュートクラス。 
+ * `MGGroup`
+ * `MGObject`
+ * `MGAttrib`
 
 == MGGroup ==
-`MGGel` のリストを格納するクラス。
+`MGGroup` is a class which contains instances of `MGGel`.
 
 http://mgcl.googlecode.com/svn/wiki/image/mg-group.png
 
-`MGGroup` も `MGGel` のサブクラスなので、
-再帰的な構造 (GoF Design Pattern で言う Composite パターン) になっている。
-`MGGroup` のリストはポインタの所有権付きリスト (`MGPList`) となっている。
+Because `MGGroup` is also a subclass of `MGGroup`, its structure is recursive (GoF's Composite design pattern).
+The ownership of instances contained in a group is transferred to the group.
 
-このクラスで定義されている主な関数は以下の通り。
+Main functions defined in this class as follows:
 
- * リスト操作関数 (`pop`, `push`, `begin`, `end`, `front`, `back`)
+ * List manipulation methods (`pop`, `push`, `begin`, `end`, `front`, `back`)
 
 == MGObject ==
 
-幾何クラスおよび位相オブジェクトを総称するクラス。
-定義されている主な関数：
+Class `MGObject` is the superclass of `MGGeometry` and `MGTopology`.
 
- * `MGOfstream`, `MGIfstream` を介したオブジェクトのシリアライズ。
- * オブジェクトのダンプ文字列の出力。
- * クローンオブジェクト (オブジェクトの deep copy) の作成。
- * 各種座標変換。
+Main functions defined in this class as follows:
 
-== 基本要素クラス ==
+ * Serialization of instances via class `MGOfstream` and `MGIfstream`.
+ * Dump the instance.
+ * Clone (deep copy) the instance
+ * Transformation.
 
-MGCL オブジェクトの基本要素となるクラス。
-以下のオブジェクトがあります。
+== Base Classes ==
+Base classes form objects of subclasses of `MGObject`.
 
- * `MGEReal` - 拡張実数、 C 言語の double に正負の無限大を追加したもの。
- * `MGInterval`, `MGBox` - 範囲を表現するクラス。
-  * `MGInterval` ･･･ 1 次元の範囲 (上限、下限は `MGEReal` で表現される)。
-  * `MGBox` ･･･ N 次元の範囲 (N は 2 以上の整数) 。
- * `MGNDDArray` - 非減少数列。単調増加する数列を表現、数列データは double 。
- * `MGPosition` - n 次元の位置を表現する。
- * `MGKnot` - ノットをあらわすクラス。ノットの値および多重度を表現する。
- * `MGKnotArray` - ノット列を表すクラス。ノットベクトルとは異なるので注意。
- * `MGVector` - ベクタを表すクラス。座標変換クラスでもある。
+ * `MGEReal` - Extended real number; positive infinity, negative infinity and real numbers.
+ * `MGInterval`, `MGBox` - 1 or N-dimensional ranges; bounds are defined by `MGEReal` values.
+ * `MGNDDArray` - A non-decreasing sequence that consists of double (real) numbers.
+ * `MGPosition` - Coordinates in N-dimensional space.
+ * `MGKnot` - A knot; defined by a real number and multiplicity.
+ * `MGKnotArray` - A sequence of knots.
+ * `MGVector` - Vector in N-dimensional space; used transformations as well.
 
-== 座標変換クラス ==
+== Transformation Classes ==
 
-座標変換オブジェクトには スケーリング (通常の実数 double を使用)、
-平行移動 (`MGVector`: ベクトル)、原点を変更しない変換 (`MGMatrix`: マトリクス)、
-一般変換 (`MGTransf`: トランスフォーム) があります。
+Transformations (rigid motion, rotation, scaling, etc.) are performed by 
+using one of the classes `MGVector`, `MGMatrix`, and `MGTransf` or their combination.
+Scaling can be performed by simply multiplying a double value to an instance of `MGObject`.
 
-`MGPPRep` (曲線の Piecewise Polynomial 表現) を除くすべての幾何オブジェクトには
-この 4 種類の座標変換演算子が用意されています。 
-
+All geometry classes (except for `MGPPRep`: Piecewise Polynomial Representation) have operators
+for transformations: 
 `operator+`, `operator-`, `operator+=`, `operator-=`,
-`operator*`, `operator/`, `operator*=`, `operator/=` などの
-オペレータオーバーロードによります。 
+`operator*`, `operator/`, `operator*=`, `operator/=`.
 
 MGCL の幾何オブジェクトはすべて、座標変換によりオブジェクトを変換してもパラメータ値は変わりません。
 幾何オブジェクト `g` と座標変換 `T` に関して次の式が成立します： 
@@ -89,69 +84,70 @@ http://mgcl.googlecode.com/svn/wiki/image/expr1.png
 
 == MGVector ==
 
-クラス `MGVector` はクラス `MGUnit_vector` のスーパークラスです。空間次元 n は 0, 1, 2, 3, ...... と、いくつでもかまいません。
+`MGVector` is the superclass of `MGUnit_vector`.
+Space dimension can be any non-negative number.
 
 http://mgcl.googlecode.com/svn/wiki/image/mg-vector.png
 
-MGVector の機能：
+MGVector features:
 
- * 各種コンストラクタ。
- * ベクトルの長さを求める。
- * 内積計算 (`operator%`) スカラー積である。
- * 外積計算 (`operator*`) ベクトル積は一般には 3 次元空間のみに定義されるが、一般の n 次元空間に拡張。
- * 直交または平行かどうかの判定。
- * 二つのベクトルの角度を求める (角度、正弦値、余弦値)。
- * 二つのベクトルの補間 (回転、または直線補間)。
- * ゼロベクトル、単位ベクトルを判定する。
- * ベクトルによるオブジェクトの平行移動。
- * ベクトル三重積を求める。
+ * Provides so many constructors.
+ * Calculates length of a vector.
+ * Computes scalar product of two vectors (`operator%`).
+ * Computes vector product of two vectors (`operator*`).
+   Generally, vector product is defined in 3 dimensional space, 
+   MGCL extends vector product to N dimensional space.
+ * Computes triple product.
+ * Tests if two vectors are perpendicular or parallel.
+ * Calculates angles between two vectors, by any form of angle, sine, or cosine.
+ * Computes interpolation of two vectors, by linear or rotation.
+ * Tests if a vector is zero, has unit length.
+ * Translate an instance of `MGObject`.
 
 == MGMatrix, MGTransform ==
+`MGMatrix` is a matix of N by N, where N is the space dimension.
 
-`MGMatrix` は原点を中心とする変換ですが、`MGTransf` は任意の点を中心として変換する座標変換です。 
-`MGMatrix` に用意されるメンバー関数を任意の点を中心に実行できるよう、変換したメンバー関数があります。
+`MGMatrix` provides transformation around the origin, 
+while `MGTransf` general transformation.
 
 http://mgcl.googlecode.com/svn/wiki/image/mg-matrix.png
 
 http://mgcl.googlecode.com/svn/wiki/image/mg-transf.png
 
-`MGMatrix`, `MGTransform` の機能：
+`MGMatrix`, `MGTransform` features:
 
- * 各種コンストラクタ。
- * 転置行列を求める。
- * 行列式の値を求める。
- * スケーリング。
- * 回転 (2D の回転または 3D で、あるベクトル回りにある角度回転する)。
- * 座標軸があるベクトルとなるよう回転する。
- * あるベクトルが座標軸のひとつとなるよう回転する。
- * 二つの直交するベクトルを X, Y 座標とするよう変換する。
- * X, Y 軸を空間の二つの直交するベクトルとなるよう回転する。
- * ある平面に関して鏡面変換する。
+ * Provides a number of constructors.
+ * Computes the transposed matrix.
+ * Computes the determinant of a matrix.
+ * Scales objects.
+ * Rotates objects by given angle around a given vector.
+ * Transforms a given vector to X or Y axis (and vise versa)
+ * Transforms two orthogonal vectors to X and Y axes (and vise versa)
+ * Mirrors objects.
 
-= B 表現 (曲線/曲面) の構成要素 =
+= B-Representatioal Curves/Surfaces Component Classes =
 
- * `MGKnotVector` - ノットベクトル。オーダ k (次数 k-1) B 表現次元 n。
+ * `MGKnotVector` - A knot vector; order `k` (`== degree - 1`) and B-Rep dimension `n`.
 
    http://mgcl.googlecode.com/svn/wiki/image/mg-knot-vector.png
 
- * `MGBPointSeq` - 点列 線 B 表現の B 係数 (制御点列) などに使用される。
+ * `MGBPointSeq` - A sequence of control points for a curve.
  
    http://mgcl.googlecode.com/svn/wiki/image/mg-b-point-seq.png
  
- * `MGSPointSeq` - 点の 2 次元列表現 面 B 表現の B 係数などに使用される。
+ * `MGSPointSeq` - A sequence of control points for a surface.
 
    http://mgcl.googlecode.com/svn/wiki/image/mg-s-point-seq.png
 
-= シリアライズ関連クラス =
+= Serialization Classes =
 
-シリアライズ (永続化) のための補助クラス。
-以下の 2 つのクラスが定義されている：
+There are two serialization classes in MGCL:
 
- * `MGIfstream` - 入力ファイルストリームクラス。
- * `MGOfstream` - 出力ファイルストリームクラス。
+ * `MGIfstream` - Input file stream.
+ * `MGOfstream` - Output file stream.
 
-以下の機能が実装されている。
+These classes support the following functions:
 
- * Geometry, Topology のすべてのオブジェクトのファイル入出力。
- * Big Endian スタイルのバイナリ入出力 (Unix, Windows 共通でバイナリファイルの利用が可能)。
- * 同一オブジェクトの 2 度書きを防止。
+ * Input or output for objects of all classes of geometry and topology.
+ * Big endian style binary data.
+ * Prevent the same objects from writing or reading twice to the stream.
