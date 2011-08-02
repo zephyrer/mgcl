@@ -5,15 +5,15 @@
 
 <wiki:toc max_depth="3" />
 
-== ご意見、ご感想 ==
+== How to Send Comments ==
 
-各 Wiki ページのコメント欄までお願いいたします。
+To send comments on this product, please use the comment form in each Wiki page.
 
-== バグ報告 ==
+== How to Report Bugs ==
 
-バグ報告は Issue Tracker で受け付けております。
+To report bugs of this product, please use Issue Tracker.
 
-== プロジェクト参加希望 ==
+== How to Join Our Project ==
 
-MGCL 開発に参加したいという方は、現在受け入れ態勢を調整中ですので、
-もうしばらくお待ち下さい。
+Please wait for a while.
+Now we are preparing for open source.
