@@ -2,6 +2,9 @@
 #labels Featured
 
 = Classes =
+
+<wiki:toc max_depth="3" />
+
 MGCL supports object-oriented programming.
 
  *  [GeometryClasses MGGeometry] - An abstract class for geometry classes.
@@ -29,7 +32,7 @@ The subclasses of `MGGel` are as follows:
  * `MGObject`
  * `MGAttrib`
 
-== MGGroup ==
+=== MGGroup ===
 `MGGroup` is a class which contains instances of `MGGel`.
 
 http://mgcl.googlecode.com/svn/wiki/image/mg-group.png
@@ -41,7 +44,7 @@ Main functions defined in this class as follows:
 
  * List manipulation methods (`pop`, `push`, `begin`, `end`, `front`, `back`)
 
-== MGObject ==
+=== MGObject ===
 
 Class `MGObject` is the superclass of `MGGeometry` and `MGTopology`.
 
@@ -82,7 +85,7 @@ http://mgcl.googlecode.com/svn/wiki/image/expr1.png
 `eval()` は位置座標の評価であり、幾何オブジェクト `g` のあるパラメータ値 `t` の座標値を求めてから
 変換 `T` を加えた点と、 `g` に座標変換 `T` を加えた後の幾何オブジェクトのパラメータ値 `t` の座標値は同じ点です。
 
-== MGVector ==
+=== MGVector ===
 
 `MGVector` is the superclass of `MGUnit_vector`.
 Space dimension can be any non-negative number.
@@ -104,7 +107,7 @@ MGVector features:
  * Tests if a vector is zero, has unit length.
  * Translate an instance of `MGObject`.
 
-== MGMatrix, MGTransform ==
+=== MGMatrix, MGTransform ===
 `MGMatrix` is a matix of N by N, where N is the space dimension.
 
 `MGMatrix` provides transformation around the origin, 

@@ -2,6 +2,9 @@
 #labels Featured
 
 = MGCL のクラス =
+
+<wiki:toc max_depth="3" />
+
 MGCL は完全なオブジェクト指向をサポートしています。すべての機能はクラスとして提供されます。
 
  *  [GeometryClasses MGGeometry] - 幾何オブジェクトのための抽象クラス。
@@ -28,7 +31,7 @@ MGCL のオブジェクトをグループのメンバーにするための抽象
  * `MGAttrib` - アトリビュート (属性) クラス。
  * `MGUAttrib` - ユーザー定義のアトリビュートクラス。 
 
-== MGGroup ==
+=== MGGroup ===
 `MGGel` のリストを格納するクラス。
 
 http://mgcl.googlecode.com/svn/wiki/image/mg-group.png
@@ -41,7 +44,7 @@ http://mgcl.googlecode.com/svn/wiki/image/mg-group.png
 
  * リスト操作関数 (`pop`, `push`, `begin`, `end`, `front`, `back`)
 
-== MGObject ==
+=== MGObject ===
 
 幾何クラスおよび位相オブジェクトを総称するクラス。
 定義されている主な関数：
@@ -87,7 +90,7 @@ http://mgcl.googlecode.com/svn/wiki/image/expr1.png
 `eval()` は位置座標の評価であり、幾何オブジェクト `g` のあるパラメータ値 `t` の座標値を求めてから
 変換 `T` を加えた点と、 `g` に座標変換 `T` を加えた後の幾何オブジェクトのパラメータ値 `t` の座標値は同じ点です。
 
-== MGVector ==
+=== MGVector ===
 
 クラス `MGVector` はクラス `MGUnit_vector` のスーパークラスです。空間次元 n は 0, 1, 2, 3, ...... と、いくつでもかまいません。
 
@@ -106,7 +109,7 @@ MGVector の機能：
  * ベクトルによるオブジェクトの平行移動。
  * ベクトル三重積を求める。
 
-== MGMatrix, MGTransform ==
+=== MGMatrix, MGTransform ===
 
 `MGMatrix` は原点を中心とする変換ですが、`MGTransf` は任意の点を中心として変換する座標変換です。 
 `MGMatrix` に用意されるメンバー関数を任意の点を中心に実行できるよう、変換したメンバー関数があります。
