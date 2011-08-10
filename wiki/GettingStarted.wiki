@@ -3,46 +3,57 @@
 
 = Getting Started =
 
-まずは MGCL のビルド済みライブラリーを利用して、
-簡単なコンソールアプリケーションを作成できるようになります。
-
-なお、本稿は Microsoft Visual Studio .NET 2003 用の説明です。
-それ以外の環境については、適宜調整をお願いします。
+In this chapter, you will learn to make a simple console application using MGCL.
+Note that this article is written with Microsoft Visual Studio .NET 2003 (msvc71).
 
 <wiki:toc max_depth="3" />
 
-== ビルド済み MGCL をダウンロードする ==
-*※ダウンロードコーナーは現在準備中です。お待ちください。*
+== Download Prebuilt MGCL ==
+*Download files are now unavailable.*  Please wait for a while.
 
-[http://code.google.com/p/mgcl/downloads/list Downloads] ページから
+From [http://code.google.com/p/mgcl/downloads/list Downloads] page, get
 
- * ビルド済み MGCL パッケージおよび
- * サンプルプロジェクト
+ * pre-built MGCL package and
+ * sample project
 
-をダウンロードし、解凍します。
+then unzip both files.
 
-== Visual Studio の設定を行う ==
+== Configure Visual Studio Settings ==
 
-以降は Microsoft Visual Studio .NET 2003 用の説明です。
-それ以降の Visual Studio のバージョンについても、同様の設定になると思います。
+Althouth the description below is how to configure IDE settings of msvc71,
+you may apply the same way to newer versions of msvc as well.
 
-MGCL のリンクパスとインクルードパスを環境に合わせて設定し直す必要があります。
-Visual Studio のメニューから [ツール] - [オプション] を選択してダイアログを開き、
-ツリーから [プロジェクト] - [VC++ ディレクトリ] を選択します。
+First you need to add an include path and a library path to IDE.
 
 http://mgcl.googlecode.com/svn/wiki/image/settings-path.png
 
-「ディレクトリを表示するプロジェクト」コンボボックスで「インクルードファイル」を選択し、
-`MGCL を展開したフォルダのパス\include` を追加します。
+== Build the Sample Project ==
+*Download files are now unavailable.*  Please wait for a while.
 
-「ディレクトリを表示するプロジェクト」コンボボックスで「ライブラリファイル」を選択し、
-`MGCL を展開したフォルダのパス\lib` を追加します。
+== Set Configuration Properties ==
 
-== サンプルプロジェクトのビルド ==
+When you develop an application using MGCL but not MFC,
+configure project properties like as follows:
 
-サンプルプロジェクトのソリューションファイルを開き、
-Release ビルドを行います。
-コンパイルエラーが発生しなければ成功です。
+ * General
+  * Use of MFC: *Use Standard Windows Libraries*
+  * Character Set: *Multibyte Character Set*
+ * C/C++
+  * Preprocessor
+   * Preprocessor definitions: Add *MGCL_NO_MFC*.
+  * Code Generation
+   * Runtime Library: */MD* (Release) or */MDd* (Debug).
+ * Linker
+  * Input: Add *mgcl-nomfc.lib* (Release) or *mgcl-nomfcd.lib* (Debug).
 
-ビルドが成功したら、プログラムを実行します。
-コンソールウィンドウに出力が表示されれば OK です。
+When you develop applications using both MGCL and MFC, configure project properties as below:
+
+ * General
+  * Use of MFC: *Use MFC in a Shared Library*
+  * Character Set: *Multibyte Character Set*
+ * C/C++
+  * Code Generation
+   * Runtime Library: */MD* (Release) or */MDd* (Debug).
+ * Linker
+  * Input: Add *mgcl-nomfc.lib* (Release) or *mgcl-nomfcd.lib* (Debug).
+    Additionally add *opengl32.lib* and *gdiplus.lib*.
