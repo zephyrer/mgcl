@@ -6,8 +6,8 @@
 #ifndef _MGGLDrawFunc_HH_
 #define _MGGLDrawFunc_HH_
 
+#include "mg/MGCL.h"
 #include <vector>
-#include "MGCLStdAfx.h"
 
 class MGBPointSeq;
 class MGBox;
