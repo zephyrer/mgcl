@@ -1,0 +1,6 @@
+#summary User's comment page
+#labels Featured
+
+= コメント =
+MGCL に関するご意見・ご要望・ご感想を以下のフォームからお寄せ下さい。
+書きこむには Google アカウントでログインする必要があります。
