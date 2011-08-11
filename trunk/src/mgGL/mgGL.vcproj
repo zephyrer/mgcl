@@ -87,10 +87,10 @@
 				PrecompiledHeaderFile="$(IntDir)/mgGL.pch"
 				AssemblerListingLocation="$(IntDir)/"
 				ObjectFile="$(IntDir)/"
-				ProgramDataBaseFileName="$(IntDir)/"
+				ProgramDataBaseFileName="$(IntDir)/$(ProjectName)d.pdb"
 				WarningLevel="3"
 				SuppressStartupBanner="TRUE"
-				DebugInformationFormat="4"
+				DebugInformationFormat="3"
 				CompileAs="0"/>
 			<Tool
 				Name="VCCustomBuildTool"/>
@@ -142,10 +142,10 @@
 				PrecompiledHeaderFile="$(IntDir)/mgGL.pch"
 				AssemblerListingLocation="$(IntDir)/"
 				ObjectFile="$(IntDir)/"
-				ProgramDataBaseFileName="$(IntDir)/"
+				ProgramDataBaseFileName="$(IntDir)/$(ProjectName)-nomfcd.pdb"
 				WarningLevel="3"
 				SuppressStartupBanner="TRUE"
-				DebugInformationFormat="4"
+				DebugInformationFormat="3"
 				CompileAs="0"/>
 			<Tool
 				Name="VCCustomBuildTool"/>
@@ -241,10 +241,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -252,10 +256,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -263,10 +271,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -274,10 +286,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -285,10 +301,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -296,10 +316,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -307,10 +331,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -318,10 +346,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -329,10 +361,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -343,10 +379,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -354,10 +394,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -365,10 +409,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -376,10 +424,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -387,10 +439,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -398,10 +454,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -409,10 +469,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -420,10 +484,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -458,10 +526,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -469,10 +541,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -480,10 +556,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -491,10 +571,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -502,10 +586,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -513,10 +601,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -524,10 +616,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -535,10 +631,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -546,10 +646,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -557,10 +661,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -568,10 +676,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -579,10 +691,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -590,10 +706,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 			<File
@@ -601,10 +721,14 @@
 				<FileConfiguration
 					Name="DebugWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="ReleaseWithoutMFC|Win32"
 					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
 				</FileConfiguration>
 			</File>
 		</Filter>
