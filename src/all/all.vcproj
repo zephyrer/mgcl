@@ -27,10 +27,10 @@
 				RuntimeTypeInfo="TRUE"
 				UsePrecompiledHeader="0"
 				AssemblerListingLocation="$(IntDir)/"
-				ProgramDataBaseFileName="$(IntDir)/"
+				ProgramDataBaseFileName="$(IntDir)/mgcld.pdb"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="FALSE"
-				DebugInformationFormat="4"/>
+				DebugInformationFormat="3"/>
 			<Tool
 				Name="VCCustomBuildTool"/>
 			<Tool
@@ -123,10 +123,10 @@
 				RuntimeTypeInfo="TRUE"
 				UsePrecompiledHeader="0"
 				AssemblerListingLocation="$(IntDir)/"
-				ProgramDataBaseFileName="$(IntDir)/"
+				ProgramDataBaseFileName="$(IntDir)/mgcl-nomfcd.pdb"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="FALSE"
-				DebugInformationFormat="4"/>
+				DebugInformationFormat="3"/>
 			<Tool
 				Name="VCCustomBuildTool"/>
 			<Tool
