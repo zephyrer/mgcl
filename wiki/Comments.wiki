@@ -1,0 +1,4 @@
+#summary User's comment page
+#labels Featured
+
+= Comments =
