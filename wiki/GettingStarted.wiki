@@ -9,7 +9,6 @@ Note that this article is written with Microsoft Visual Studio .NET 2003 (msvc71
 <wiki:toc max_depth="3" />
 
 == Download Prebuilt MGCL ==
-*Download files are now unavailable.*  Please wait for a while.
 
 From [http://code.google.com/p/mgcl/downloads/list Downloads] page, get
 

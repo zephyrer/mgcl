@@ -12,7 +12,6 @@
 <wiki:toc max_depth="3" />
 
 == ビルド済み MGCL をダウンロードする ==
-*※ダウンロードコーナーは現在準備中です。お待ちください。*
 
 [http://code.google.com/p/mgcl/downloads/list Downloads] ページから
 
