@@ -8,22 +8,22 @@
 以下はすべて PDF ファイルです。
 
 == MGCL 技術資料 ==
- * [http://mgcl.googlecode.com/svn/wiki/doc/mgcl-technical.pdf MGCL 技術資料] - メンテしていません。
-  * [http://mgcl.googlecode.com/svn/wiki/doc/class-diagram.pdf クラス継承図] - 簡単なクラス継承図です。
+ * [http://mgcl.googlecode.com/svn/doc/mgcl-technical.pdf MGCL 技術資料] - メンテしていません。
+  * [http://mgcl.googlecode.com/svn/doc/class-diagram.pdf クラス継承図] - 簡単なクラス継承図です。
   * [http://218.222.197.203/mgcl/reference/ MGCL Library Reference] Doxygen 生成によるライブラリーリファレンスです。
 
 == MGCL による CAGD ==
 MGCL の数学的背景を解説する文書です。
 
- * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-by-mgcl.pdf MGCL による CAGD]
-  * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch01-dimension.pdf 1 章 次元]
-  * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch02-divided-difference.pdf 2 章 差分商]
-  * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch03-straight-plane.pdf 3 章 直線と平面]
-  * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch04-curve.pdf 4 章 曲線]
-  * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch05-b-spline.pdf 5 章 B-Spline]
-  * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch06-nurbs.pdf 6 章 NURBS]
-  * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch07-surface.pdf 7 章 曲面]
-  * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch08-fitting.pdf 8 章 曲線と曲面のフィッティングおよび近似]
+ * [http://mgcl.googlecode.com/svn/doc/cagd-by-mgcl.pdf MGCL による CAGD]
+  * [http://mgcl.googlecode.com/svn/doc/cagd-ch01-dimension.pdf 1 章 次元]
+  * [http://mgcl.googlecode.com/svn/doc/cagd-ch02-divided-difference.pdf 2 章 差分商]
+  * [http://mgcl.googlecode.com/svn/doc/cagd-ch03-straight-plane.pdf 3 章 直線と平面]
+  * [http://mgcl.googlecode.com/svn/doc/cagd-ch04-curve.pdf 4 章 曲線]
+  * [http://mgcl.googlecode.com/svn/doc/cagd-ch05-b-spline.pdf 5 章 B-Spline]
+  * [http://mgcl.googlecode.com/svn/doc/cagd-ch06-nurbs.pdf 6 章 NURBS]
+  * [http://mgcl.googlecode.com/svn/doc/cagd-ch07-surface.pdf 7 章 曲面]
+  * [http://mgcl.googlecode.com/svn/doc/cagd-ch08-fitting.pdf 8 章 曲線と曲面のフィッティングおよび近似]
   * 9 章 曲線と曲面の変形（準備中）
-  * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch10-solid-modeling.pdf 10 章 ソリッドモデリング]
-  * [http://mgcl.googlecode.com/svn/wiki/doc/cagd-ch11-numeric.pdf 11 章 MGCL の用意する数値計算]
+  * [http://mgcl.googlecode.com/svn/doc/cagd-ch10-solid-modeling.pdf 10 章 ソリッドモデリング]
+  * [http://mgcl.googlecode.com/svn/doc/cagd-ch11-numeric.pdf 11 章 MGCL の用意する数値計算]
