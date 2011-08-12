@@ -10,7 +10,7 @@
 == MGCL 技術資料 ==
  * [http://mgcl.googlecode.com/svn/doc/mgcl-technical.pdf MGCL 技術資料] - メンテしていません。
   * [http://mgcl.googlecode.com/svn/doc/class-diagram.pdf クラス継承図] - 簡単なクラス継承図です。
-  * [http://218.222.197.203/mgcl/reference/ MGCL Library Reference] Doxygen 生成によるライブラリーリファレンスです。
+  * [http://mgcl.googlecode.com/svn/doc/html/index.html MGCL Library Reference] Doxygen 生成によるライブラリーリファレンスです。
 
 == MGCL による CAGD ==
 MGCL の数学的背景を解説する文書です。
