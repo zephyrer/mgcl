@@ -2,7 +2,7 @@
 
 Maestro's Geometry Class Library (produced by DG Technologies Inc)
 
-Automatically exported from code.google.com/p/mgcl
+Automatically exported from [https://code.google.com/archive/p/mgcl/](https://code.google.com/archive/p/mgcl/)
 
 ## Overview
 
