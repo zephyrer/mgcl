@@ -2,6 +2,8 @@
 
 Maestro's Geometry Class Library (produced by DG Technologies Inc)
 
+Automatically exported from code.google.com/p/mgcl
+
 ## Overview
 
 MGCL (Maestro's Geometry Class Library) is a class library implemented in C++.
